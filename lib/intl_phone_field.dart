@@ -426,7 +426,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
 
         widget.onChanged?.call(phoneNumber);
       },
-      validator: (value) {
+      validator: (value) async {
         final validatorMessage = await widget.validator?.call(phoneNumber);
         return validatorMessage;
         if (value == null || !isNumeric(value)) return validatorMessage;
